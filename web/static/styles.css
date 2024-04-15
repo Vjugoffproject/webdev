@@ -1,0 +1,92 @@
+/* Светлая тема */
+body.light-theme {
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+.light-theme .note {
+    background-color: #F2F2F2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .important {
+    background-color: #FFDAB9; /* Бледно-оранжевый фон */
+    font-weight: bold;
+}
+
+/* Темная тема */
+body.dark-theme {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+.dark-theme .note {
+    background-color: #444444;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .important {
+    background-color: #FFDAB9; /* Бледно-оранжевый фон */
+    font-weight: bold;
+}
+
+/* Общие стили */
+.note {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.note h3 {
+    font-family: 'Cakra', sans-serif;
+    margin-top: 0;
+}
+
+.note p {
+    font-family: 'Cakra', sans-serif;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 50%;
+}
+/* Стили для поля описания */
+textarea[name="description"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 50%;
+    height: 40px; /* Устанавливаем высоту */
+    resize: none; /* Запрещаем изменение размера */
+}
+
+/* Стили для важных заметок */
+.important {
+    background-color: #FFDAB9; /* Бледно-оранжевый фон */
+    font-weight: bold;
+}
+
+.important h3:before {
+    content: "\26A0"; /* Добавляем эмодзи красного восклицательного знака перед заголовком */
+    color: red; /* Цвет красного */
+    font-size: 24px; /* Увеличиваем размер восклицательного знака */
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

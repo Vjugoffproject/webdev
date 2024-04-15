@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блокнот</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="light-theme">
+    <h1>Мой блокнот</h1>
+    <form action="/add" method="POST">
+        <input type="text" name="title" placeholder="Заголовок">
+        <textarea name="description" placeholder="Описание" rows="10"></textarea> <!-- Увеличенное поле для описания -->
+        <input type="checkbox" name="important"> Важное
+        <button type="submit">Добавить</button>
+    </form>
+    <h2>Заметки:</h2>
+    {% for note in notes %}
+        <div class="note{% if note.important %} important{% endif %}">
+            <h3>{{ note.title }}</h3>
+            <p>{{ note.description }}</p>
+            <a href="/delete/{{ note.id }}">Удалить</a>
+            <a href="/edit/{{ note.id }}">Редактировать</a>
+        </div>
+    {% endfor %}
+</body>
+</html>
